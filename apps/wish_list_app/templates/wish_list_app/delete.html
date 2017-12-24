@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show the User Id</title>
+</head>
+<body>
+
+  <h2>Are you sure you want do delete the {{item.item}} from your wish list?? This will delete it completely from the Database</h2>
+		<form action='{% url "wish_list_app:confirm_delete" item.id %}' method='POST'>
+        {% csrf_token %}
+
+          <input type="hidden" name="item_id" value = "{{ item.id }}">
+          
+
+          <input type="submit" value="Delete wish?">
+       </form>
+		
+		
+        
+     
+</body>
+</html>

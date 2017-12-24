@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show the User Id</title>
+</head>
+<body>
+
+  <p>Are you sure you want do delete {{friend.name}} as your friend??</p>
+		<form action='{% url "login_app:confirm_delete" friend.id %}' method='POST'>
+        {% csrf_token %}
+
+          <input type="hidden" name="friend_id" value = "{{ friend.id }}">
+          
+
+          <input type="submit" value="Delete appointment?">
+       </form>
+		
+		
+        
+     
+</body>
+</html>

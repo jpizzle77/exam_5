@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<a href="{% url 'friends_app:clear' %}" class="btn btn-primary btn-xs pull-right">Logout</a>
+	<a href="{% url 'friends_app:index' %}" class="btn btn-primary btn-xs pull-right">Home</a>
+		
+		<h1>{{user.name}}'s Profile</h1>
+		<p></p>
+		<p>Alias: {{user.alias}}</p>
+		<p>Email Address: {{user.email}}</p>
+</body>
+</html>

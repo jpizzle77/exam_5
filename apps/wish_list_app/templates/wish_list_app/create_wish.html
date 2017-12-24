@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <a href="{% url 'wish_list_app:clear' %}" class="btn btn-primary btn-xs pull-right">Logout</a>
+    <a href="{% url 'wish_list_app:index' %}" class="btn btn-primary btn-xs pull-right">Home</a>
+        
+
+
+        {% if messages %}
+          {% for message in messages %}
+           <h4><font color="red">{{ message }}</font> </h4>
+          {% endfor %}
+        {% endif %}
+        <h1>Create a new wish list item </h1>
+
+         <form name ="name" action="{% url 'wish_list_app:add_wish' %}" method='POST'>
+         {% csrf_token %}
+
+        
+
+         <p><label for="wish">Item/product </label>
+         <p><input  type='text' name='wish' value= ''></p>
+         <input type="hidden" name="wish_maker" value = "True">
+         <input type="hidden" name="start_date" value = "{% now 'b/d/Y' %}">
+        
+        
+          <p><input type="submit" value="Add!"></p>
+
+
+
+         </form>
+
+</body>
+</html>
